@@ -178,6 +178,7 @@ body {
   align-items: center;
   transition: transform 0.3s ease;
   margin: 0;
+  text: white;
   flex-shrink: 0;
   text-decoration: none;
   background: var(--primary-color);

@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <>
@@ -26,14 +28,15 @@ export default function Header() {
       {/* Header */}
       <header className="site-header">
         <div className="header-wrapper">
+          <h1 className="text-3xl font-bold text-black">Alpha5academy</h1>
           {/* Logo */}
-          <Link href="/" className="site-logo">
-            <img
+          {/* <Link href="/" className="site-logo">
+          {/*}  <img
               src="/images/logo.png"
               alt="livelong wealth logo"
               style={{ width: "auto", height: "50px" }}
             />
-          </Link>
+          </Link> */}
 
           {/* Mobile Menu Toggle */}
           <button
@@ -62,27 +65,33 @@ export default function Header() {
             >
               <ul className="navbar-nav">
                 <li className="nav-item active">
-                  <Link href="/">Home</Link>
-                </li>
-
-                <li className="nav-item dropdown">
-                  <a
-                    className="dropdown-toggle"
-                    href="#"
-                    id="aboutDropdown"
-                    role="button"
+                  <Link
+                    href="/"
+                    className={
+                      pathname === "/"
+                        ? "underline decoration-[#f59e0b] underline-offset-4"
+                        : ""
+                    }
                   >
-                    About Us
-                  </a>
-                  <ul className="dropdown-menu" aria-labelledby="aboutDropdown">
-                    <li>
-                      <a className="dropdown-item" href="#about">
-                        About Us
-                      </a>
-                    </li>
-                  </ul>
+                    HOME
+                  </Link>
                 </li>
 
+                <li className="nav-item">
+                  <Link
+                    href="/about"
+                    className={
+                      pathname === "/about"
+                        ? "underline decoration-[#f59e0b] underline-offset-4"
+                        : ""
+                    }
+                  >
+                    ABOUT US
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <a href="#services">NEWS</a>
+                </li>
                 <li className="nav-item dropdown">
                   <a
                     className="dropdown-toggle"
@@ -90,57 +99,79 @@ export default function Header() {
                     id="servicesDropdown"
                     role="button"
                   >
-                    Our Services
+                    SERVICES
                   </a>
                   <ul
                     className="dropdown-menu"
                     aria-labelledby="servicesDropdown"
                   >
                     <li>
-                      <a className="dropdown-item" href="#services">
-                        Courses
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#services">
-                        Wealth Management
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#services">
+                      <a className="dropdown-item" href="#workshops">
                         Workshops
                       </a>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="#services">
-                        Mutual Fund
+                      <a className="dropdown-item" href="#wealth-management">
+                        Wealth Management
                       </a>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="#services">
-                        Placements
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#services">
-                        Tools
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#services">
-                        Blog
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#services">
-                        FAQs
+                      <a className="dropdown-item" href="#estate-planning">
+                        Estate Planning
                       </a>
                     </li>
                   </ul>
                 </li>
 
+                <li className="nav-item dropdown">
+                  <a
+                    className="dropdown-toggle"
+                    href="#"
+                    id="coursesDropdown"
+                    role="button"
+                  >
+                    COURSES
+                  </a>
+                  <ul
+                    className="dropdown-menu"
+                    aria-labelledby="coursesDropdown"
+                  >
+                    <li className="dropdown-header">ONLINE COURSES</li>
+                    <li>
+                      <a className="dropdown-item" href="#online-basics">
+                        Basics of Capital Markets (Complementary*)
+                      </a>
+                    </li>
+                    <li>
+                      <a className="dropdown-item" href="#online-investment">
+                        Investment and Portfolio Construction – Basics to
+                        Advanced (Complementary*)
+                      </a>
+                    </li>
+                    <li>
+                      <a className="dropdown-item" href="#online-advanced">
+                        Advanced Techno-Funda Analysis Course
+                      </a>
+                    </li>
+                    <li className="dropdown-divider" />
+                    <li className="dropdown-header">OFFLINE COURSES</li>
+                    <li>
+                      <a className="dropdown-item" href="#offline-advanced">
+                        Advanced TechnoFunda Analysis Course
+                      </a>
+                    </li>
+                    <li>
+                      <a className="dropdown-item" href="#offline-mentorship">
+                        Mentorship Programs
+                      </a>
+                    </li>
+                  </ul>
+                </li>
                 <li className="nav-item">
-                  <a href="#services">Our App</a>
+                  <a href="#testimonials">GET IN TOUCH</a>
+                </li>
+                <li className="nav-item">
+                  <a href="#testimonials">MARKET A-Z</a>
                 </li>
 
                 <li className="nav-item">

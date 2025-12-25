@@ -6,15 +6,15 @@ export default function HeroSection() {
       <div className="container">
         <div className="row">
           <div className="col-md-12 content-box text-center">
-            <h1 className="hero-title">Experience Financial Freedom</h1>
+            <h1 className="hero-title">Your Smart Wealth Path</h1>
             <h3 className="hero-subtitle">
-              Wealth Management | Courses | Workshops
+              Workshops | Wealth Management | Estate Planning
             </h3>
 
             <div className="row">
               <div className="col-md-12">
                 <a href="#services" className="btn secondaray-btn mt-4">
-                  Join Us
+                  Sign Up Now
                 </a>
               </div>
             </div>
@@ -22,7 +22,7 @@ export default function HeroSection() {
             <div className="col-md-12 content-box">
               <div className="for-desktop">
                 <Image
-                  src="/images/homepage-hero-pic.png"
+                  src="/images/HomeHeroImage.jpg"
                   alt="home page hero image"
                   width={1200}
                   height={400}
